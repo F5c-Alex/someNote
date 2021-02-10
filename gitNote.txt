@@ -6,3 +6,8 @@ git branch -d [branch-name]
 git checkout [branch-name]
 //新建并切换分支
 git checkout -b [branch-name]
+
+//本地分支改名
+git branch -m [old-branch-name] [new-branch-name]
+//新建远程分支
+git push origin [local-branch-name]:[new-remote-branch-name]
