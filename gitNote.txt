@@ -1,0 +1,8 @@
+//新建分支
+git branch [branch-name]
+//删除分支
+git branch -d [branch-name]
+//切换分支
+git checkout [branch-name]
+//新建并切换分支
+git checkout -b [branch-name]
