@@ -1,18 +1,26 @@
-golang中能不能对指针使用下标运算？
+1、golang中能不能对指针使用下标运算？
 go语言从语言层面禁止指针运算。但在测试中发现，数组指针可以取下标，感觉可能是语法糖？
 如果是数组指针，可以，切片指针不行，详见pointer_test.go。（应该是只有数组指针可以）
 
+2、map
 不能直接修改map value中的某个元素的值，如果需要修改，则必须整体赋值。（详见map_test.go）
 golang内置的map不是并发安全的，并发安全的map可以使用标准包sync中的map
 
-理解nil
+3、理解nil
 golang中的nil代表引用类型的默认值。golang中的引用类型：pointer、interface、slice、map、channel、fucntion。每种引用类型的默认值是不一样的。就像基础类型中，bool的默认值是false，int的默认值是0。
 作为一个强类型语言，不同引用类型的判空规则是不一样的：
 interface的判空规则是，需要判断类型和值是否都为nil（interface的底层是由类型和值构成的）
 slice的判空，需要判断slice底层数组的指针为空，容量和size均为0.
 nil指针能直接调用方法。
 
-接口
+4、接口
 某个类型实现了interface所有方法，才可以说是实现了这个接口，必须是类型，而不能是类型的指针！！
-
 但如果给interface赋值了一个类型的指针，那只要这个类型+指针实现了interface的所有方法，就可以说实现了这个接口。
+
+5、golang的底层是用什么语言实现的
+最早的时候，Golang是用的C和汇编实现的。
+后面Golang实现了自举，重写了编译器，所以现在是用的Golang本身实现的。
+假如你发明了一种新的语言 CNifeLang，首先需要用一种现有的语言写一个 CNifeLang 的编译器，比如说就用 Golang 吧；
+你用 Golang 写了一个 CNifeLang 的编译器，能成功地把任何合法的 CNifeLang 源代码编译为等价的目标程序。
+接着用 CNifeLang 写一个程序，它与你用 Golang 写的编译器功能完全相同，用 Golang 实现的编译器把这个程序编译完成，你就得到了一个用 CNifeLang 实现的 CNifeLang 编译器。
+因为这个程序的功能与用 Golang 写的编译器完全相同，所以你完全可以用这个编译器去编译 CNifeLang，于是 CNifeLang 实现了“自举”
