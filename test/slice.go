@@ -10,10 +10,8 @@ import "fmt"
 // }
 
 func main() {
-	i := 1844674407370955161
-	j := 1844674407370955161
-	if i*10+10 > j*10+9 {
-		fmt.Println("i:", i)
-	}
-	fmt.Println(string('3'))
+	fmt.Println("please enter a num")
+	var i int
+	fmt.Scanf("%d",&i)
+	fmt.Println(i)
 }
