@@ -1,0 +1,7 @@
+Hello, interviewer. My name's FengWuxi.I graduated from Zhejiang University with a bachelor's degree and now I am a master of 
+Mechanical Engineering College of Zhejiang University. My research is about 6D pose measurement of untextured and reflective objects.
+I have one SCI paper published and another one under review. In my research, I used Cplusplus to implememt my algorithm. In order to 
+improve my programming ability and engineering experiment, I did an internship at bytedance for a few months and setup two dervers
+which are both described on my resume in detailed. In order to further improve my ability, I applied for a intership at Microsoft.
+That's all my self-introduction. Thank you.
+
